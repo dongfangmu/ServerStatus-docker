@@ -1,4 +1,4 @@
-#一键Docker
+# 一键Docker
 ```
 docker run -d --restart=always --name=srvstatus -v /home/ServerStatus/config.json:/ServerStatus/server/config.json -p 8888:8888 -p 35601:35601 drice64/serverstatus-docker:latest
 ```
