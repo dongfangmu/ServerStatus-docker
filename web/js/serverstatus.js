@@ -138,10 +138,10 @@ function uptime() {
 			// Ipstatus
 			if (result.servers[i].ip_status) {
 				TableRow.children["ip_status"].children[0].children[0].className = "progress-bar progress-bar-success";
-				TableRow.children["ip_status"].children[0].children[0].innerHTML = "<small>MH361</small>";
+				TableRow.children["ip_status"].children[0].children[0].innerHTML = "<small>正常</small>";
 			} else {
 				TableRow.children["ip_status"].children[0].children[0].className = "progress-bar progress-bar-danger";
-				TableRow.children["ip_status"].children[0].children[0].innerHTML = "<small>MH370</small>";
+				TableRow.children["ip_status"].children[0].children[0].innerHTML = "<small>异常</small>";
 			}
 
 			// Name
@@ -281,7 +281,7 @@ function uptime() {
                 var PING_189 = result.servers[i].ping_189.toFixed(0);
                 var PING_10086 = result.servers[i].ping_10086.toFixed(0);
                 var pingTime = result.servers[i].time_10010 + "ms💻" + result.servers[i].time_189 + "ms💻" + result.servers[i].time_10086 + "ms"
-                if (PING_10010 >= 10 || PING_189 >= 10 || PING_10086 >= 10)
+                if (PING_10010 >= 80 || PING_189 >= 80 || PING_10086 >= 80)
                     TableRow.children["ping"].children[0].children[0].className = "progress-bar progress-bar-danger";
                 else
                     TableRow.children["ping"].children[0].children[0].className = "progress-bar progress-bar-success";
