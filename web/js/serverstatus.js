@@ -280,7 +280,7 @@ function uptime() {
                 var PING_10010 = result.servers[i].ping_10010.toFixed(0);
                 var PING_189 = result.servers[i].ping_189.toFixed(0);
                 var PING_10086 = result.servers[i].ping_10086.toFixed(0);
-                var pingTime = result.servers[i].time_10010 + "ms💻" + result.servers[i].time_189 + "ms💻" + result.servers[i].time_10086 + "ms"
+                var pingTime = result.servers[i].time_10010 + "ms-" + result.servers[i].time_189 + "ms-" + result.servers[i].time_10086 + "ms"
                 if (PING_10010 >= 80 || PING_189 >= 80 || PING_10086 >= 80)
                     TableRow.children["ping"].children[0].children[0].className = "progress-bar progress-bar-danger";
                 else
@@ -288,7 +288,7 @@ function uptime() {
                     TableRow.children["ping"].children[0].children[0].setAttribute("data-toggle", "tooltip");
                     TableRow.children["ping"].children[0].children[0].setAttribute("data-placement", "right");
                     TableRow.children["ping"].children[0].children[0].setAttribute("title", pingTime);
-				TableRow.children["ping"].children[0].children[0].innerHTML = PING_10010 + "%💻" + PING_189 + "%💻" + PING_10086 + "%";
+				TableRow.children["ping"].children[0].children[0].innerHTML = PING_10010 + "%-" + PING_189 + "&-" + PING_10086 + "%";
 
 				// Custom
 				if (result.servers[i].custom) {
