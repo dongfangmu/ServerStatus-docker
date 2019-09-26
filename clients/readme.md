@@ -9,3 +9,12 @@ apt-get update \
   && wget https://github.com/drice82/ServerStatus-docker/raw/master/clients/client-psutil.py \
   && nano client-psutil.py
 ```
+###
+systemctl start rc-local
+chmod +x rc.local
+rc.local
+```
+#!/bin/sh -e
+nohup python /root/client-psutil.py &> /dev/null &
+exit 0
+```
